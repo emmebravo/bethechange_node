@@ -1,0 +1,13 @@
+{
+  "name": "bethechange_node",
+  "version": "1.0.0",
+  "main": "server.js",
+  "repository": "git@github.com:emmebravo/bethechange_node.git",
+  "author": "mbcodes <mbcodes@protonmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "mongodb": "^4.6.0"
+  }
+}
