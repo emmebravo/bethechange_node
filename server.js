@@ -1,10 +1,10 @@
-require('dotenv').config();
+import 'dotenv/config';
+import express from 'express';
+import cors from 'cors';
+//import apiRoutes from './routes/api.js';
 
-const express = require('express');
 const app = express();
-const PORT = process.env.PORT || 5000;
-const cors = require('cors');
-const apiRoutes = require('./routes/api');
+const PORT = process.env.PORT;
 
 //middleware
 app.use(express.json());
@@ -12,7 +12,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
 //database connect
-const { connectDB } = require('./config/database');
+import connectDB from './config/database.js';
 connectDB();
 
 //routes
