@@ -4,7 +4,7 @@
 import Validator from 'validator';
 import isEmpty from 'is-empty';
 
-export default function validateRegisterInput(data) {
+export default function validateRegister(data) {
   const errors = {};
 
   // covert empty fields to empty string to use validator fcns

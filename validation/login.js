@@ -1,7 +1,7 @@
 import Validator from 'validator';
 import isEmpty from 'is-empty';
 
-export default function validateLoginInput(data) {
+export default function validateLogin(data) {
   const errors = {};
 
   // covert empty fields to empty string to use validator fcns
