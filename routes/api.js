@@ -1,8 +1,10 @@
-// const router = require('express').Router();
-// const usersRoutes = require('./users');
-// const plaidRoutes = require('./plaid');
+import express from 'express';
+import usersRoutes from './users.js';
+//import plaidRoutes from './plaid.js'
 
-// router.use('/users', usersRoutes);
+const router = express.Router();
+
+router.use('/users', usersRoutes);
 // router.use('/plaid', plaidRoutes);
 
-// module.exports = router;
+export default router;
