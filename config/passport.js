@@ -1,9 +1,7 @@
 import 'dotenv/config';
-import JwtStrategy from 'passport-jwt/lib/strategy';
-import { ExtractJwt } from 'passport-jwt/lib';
-import mongoose from 'mongoose';
-
-const User = mongoose.model('users');
+import User from '../models/User.js';
+import JwtStrategy from 'passport-jwt/lib/strategy.js';
+import { ExtractJwt } from 'passport-jwt/lib/index.js';
 
 const opts = {};
 opts.jwtFromRequest = ExtractJwt.fromAuthHeaderAsBearerToken();
