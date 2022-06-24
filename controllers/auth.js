@@ -1,16 +1,18 @@
 import 'dotenv/config';
+import validateRegister from '../validation/register.js';
+import validateLogin from '../validation/login.js';
 import User from '../models/User.js';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
-import validateRegister from '../validation/register.js';
-import validateLogin from '../validation/login.js';
 
 export function postRegister(request, response) {
-  const { errors, isValid } = validateRegister;
+  // const { errors, isValid } = validateRegister;
   const { name, email, password } = request.body;
 
   // check validation
-  if (!isValid) return response.status(400).json(errors);
+  // if (!isValid) return response.status(400).json(errors);
+
+  console.log(request.body);
 
   User.findOne({ email: email }).then((user) => {
     if (user)
@@ -39,6 +41,8 @@ export function postRegister(request, response) {
       });
     }
   });
+
+  //response.send("you're at register");
 }
 
 export function postLogin(request, response) {
