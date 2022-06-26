@@ -1,13 +1,10 @@
-// const Validator = require('validator');
-// const isEmpty = require('is-empty');
-
 import Validator from 'validator';
 import isEmpty from 'is-empty';
 
 export default function validateRegister(data) {
   const errors = {};
 
-  // covert empty fields to empty string to use validator fcns
+  // convert empty fields to empty string to use validator fcns
   data.name = !isEmpty(data.name) ? data.name : '';
   data.email = !isEmpty(data.email) ? data.email : '';
   data.password = !isEmpty(data.password) ? data.password : '';

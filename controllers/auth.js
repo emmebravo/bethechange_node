@@ -1,6 +1,6 @@
 import 'dotenv/config';
-import validateRegister from '../validation/register.js';
-import validateLogin from '../validation/login.js';
+// import validateRegister from '../validation/register.js';
+// import validateLogin from '../validation/login.js';
 import User from '../models/User.js';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
@@ -46,15 +46,16 @@ export function postRegister(request, response) {
 }
 
 export function postLogin(request, response) {
-  const { errors, isValid } = validateLogin;
+  // const { errors, isValid } = validateLogin;
 
-  //Check validation
-  if (!isValid) return response.status(400).json(errors);
+  // //Check validation
+  // if (!isValid) return response.status(400).json(errors);
 
   const { email, password } = request.body;
+  console.log(request.body);
 
   // find user by email
-  User.findOne({ email }).then((user) => {
+  User.findOne({ email: email }).then((user) => {
     // check if user exists
     if (!user)
       return response.status(400).json({ emailnotfound: 'Email not found' });
@@ -83,7 +84,7 @@ export function postLogin(request, response) {
     } else {
       return response
         .status(400)
-        .json({ passowrdincorrect: 'Password incorrect' });
+        .json({ passwordincorrect: 'Password incorrect' });
     }
   });
 }
