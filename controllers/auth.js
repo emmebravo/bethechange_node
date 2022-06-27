@@ -23,8 +23,6 @@ export function postRegister(request, response) {
         password,
       });
 
-      console.log('new user ', newUser);
-
       // hash password with bcrypt
       bcrypt.genSalt(10, (error, salt) => {
         bcrypt.hash(newUser.password, salt, (error, hash) => {
