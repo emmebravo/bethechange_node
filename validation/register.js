@@ -15,7 +15,7 @@ export default function validateRegister(data) {
 
   // checks email input
   if (Validator.isEmpty(data.email)) errors.email = 'Email field is required';
-  else if (!Validator.isEmpty(data.email)) errors.email = 'Email is invalid';
+  else if (!Validator.isEmail(data.email)) errors.email = 'Email is invalid';
 
   // checks password input
   if (Validator.isEmpty(data.password))
