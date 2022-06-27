@@ -6,8 +6,11 @@
   "author": "mbcodes <mbcodes@protonmail.com>",
   "license": "MIT",
   "scripts": {
+    "client-install": "yarn add --prefix client",
     "start": "node server.js",
-    "server": "nodemon server.js"
+    "server": "nodemon server.js",
+    "client": "yarn start --prefix client",
+    "dev": "concurrently \"yarn server\" \"yarn client\""
   },
   "type": "module",
   "dependencies": {
